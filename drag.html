@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task 3: Drag-and-Drop Priorities</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="theme.js" defer></script>
+  <script src="drag.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav aria-label="Assignment tasks">
+      <a href="modal.html">Modals</a>
+      <a href="form.html">Form validation</a>
+      <a href="drag.html" aria-current="page">Priority list</a>
+    </nav>
+
+    <button id="theme-toggle" type="button" aria-pressed="false">
+      Dark mode
+    </button>
+  </header>
+
+  <main>
+    <h1>Task 3: Drag-and-Drop Priority List</h1>
+    <p>
+      Drag tasks into a new order, or use the arrow buttons.
+      The first task has the highest priority.
+    </p>
+
+    <!-- JavaScript creates five draggable items inside this list. -->
+    <ol
+      id="task-list"
+      class="task-list"
+      aria-label="Tasks in priority order"
+    ></ol>
+
+    <button id="reset-order" type="button">Reset order</button>
+
+    <!-- Announce changes without moving keyboard focus. -->
+    <p id="order-status" class="status" role="status"></p>
+  </main>
+</body>
+</html>

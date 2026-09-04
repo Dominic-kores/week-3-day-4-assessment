@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task 2: Form Validation</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="theme.js" defer></script>
+  <script src="form.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav aria-label="Assignment tasks">
+      <a href="modal.html">Modals</a>
+      <a href="form.html" aria-current="page">Form validation</a>
+      <a href="drag.html">Priority list</a>
+    </nav>
+
+    <button id="theme-toggle" type="button" aria-pressed="false">
+      Dark mode
+    </button>
+  </header>
+
+  <main>
+    <h1>Task 2: Real-Time Form Validation</h1>
+    <p>Use sample details. This practice form logs data to the console.</p>
+
+    <!-- Disable browser popups so JavaScript can provide custom feedback. -->
+    <form id="registration-form" class="panel" novalidate>
+      <div class="field">
+        <label for="name">Name</label>
+
+        <div class="input-wrapper">
+          <input
+            id="name"
+            name="name"
+            type="text"
+            autocomplete="name"
+            aria-describedby="name-feedback"
+            required
+          >
+          <span class="icon" aria-hidden="true"></span>
+        </div>
+
+        <!-- aria-live announces updated feedback to screen readers. -->
+        <p id="name-feedback" class="feedback" aria-live="polite">
+          Enter at least 2 characters.
+        </p>
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+
+        <div class="input-wrapper">
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            aria-describedby="email-feedback"
+            required
+          >
+          <span class="icon" aria-hidden="true"></span>
+        </div>
+
+        <p id="email-feedback" class="feedback" aria-live="polite">
+          Example: alex@example.com
+        </p>
+      </div>
+
+      <div class="field">
+        <label for="phone">Phone</label>
+
+        <div class="input-wrapper">
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            autocomplete="tel"
+            aria-describedby="phone-feedback"
+            required
+          >
+          <span class="icon" aria-hidden="true"></span>
+        </div>
+
+        <p id="phone-feedback" class="feedback" aria-live="polite">
+          Enter 10 digits starting with 07 or 01.
+        </p>
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+
+        <div class="input-wrapper">
+          <input
+            id="password"
+            name="password"
+            type="password"
+            autocomplete="new-password"
+            aria-describedby="password-feedback"
+            required
+          >
+          <span class="icon" aria-hidden="true"></span>
+        </div>
+
+        <p id="password-feedback" class="feedback" aria-live="polite">
+          Use 8+ characters, an uppercase letter, and a number.
+        </p>
+      </div>
+
+      <!-- JavaScript enables this only when every field is valid. -->
+      <button id="submit-button" type="submit" disabled>
+        Submit
+      </button>
+
+      <p id="form-status" class="status" role="status"></p>
+    </form>
+  </main>
+</body>
+</html>

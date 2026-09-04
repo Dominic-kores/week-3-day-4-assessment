@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Match the layout to the device width for responsive styling. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Three commented JavaScript exercises: modals, live form validation, and drag-and-drop priorities.">
+  <title>Modal system | Events Lab</title>
+  <!-- Load the saved theme before rendering to avoid a theme flash. -->
+  <script src="theme.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <!-- defer runs the exercise script after the HTML has been parsed. -->
+  <script src="modal.js" defer></script>
+</head>
+<body>
+  <!-- Shared navigation links the exercises; aria-current identifies this page. -->
+  <header><span class="brand">Events / Lab</span><nav aria-label="Exercises"><a href="modal.html" aria-current="page">01 · Modals</a><a href="form.html">02 · Validation</a><a href="drag.html">03 · Priorities</a></nav><button id="theme-toggle" class="secondary" type="button" aria-pressed="false">Dark mode</button></header>
+  <!-- Main content for this exercise. -->
+  <main>
+    <div class="intro"><span class="eyebrow">Exercise 01 / Modal system</span><h1>A little more context.</h1><p>Explore three JavaScript concepts. Open a card, then close it with the button, the backdrop, or Escape.</p></div>
+    <!-- data-topic selects the content; one parent click listener handles all buttons. -->
+    <section class="cards" aria-label="JavaScript concepts">
+      <article class="card"><span class="number">01 / LISTEN</span><h2>Event handling</h2><p>Make a page respond to clicks, keystrokes, and everything in between.</p><button type="button" data-topic="events" aria-haspopup="dialog">Learn More</button></article>
+      <article class="card"><span class="number">02 / DELEGATE</span><h2>Event delegation</h2><p>Connect many controls through one listener on their parent.</p><button type="button" data-topic="delegation" aria-haspopup="dialog">Learn More</button></article>
+      <article class="card"><span class="number">03 / REMEMBER</span><h2>localStorage</h2><p>Keep preferences and task priorities ready for the next visit.</p><button type="button" data-topic="storage" aria-haspopup="dialog">Learn More</button></article>
+    </section>
+  </main>
+  <!-- A single reusable dialog displays three distinct modal contents. -->
+  <div id="overlay" class="overlay" aria-hidden="true">
+    <!-- Accessible dialog labels refer to the title and description below. -->
+    <section id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-description">
+      <div class="modal-top"><h2 id="modal-title"></h2><button class="secondary close-icon" type="button" data-close aria-label="Close modal">×</button></div>
+      <p id="modal-description"></p><button type="button" data-close>Close</button>
+    </section>
+  </div>
+  <footer>Week 2 · Day 4 &nbsp; / &nbsp; Events deep dive</footer>
+</body>
+</html>

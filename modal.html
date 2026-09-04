@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task 1: Modal System</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- defer runs these scripts after the HTML has been parsed. -->
+  <script src="theme.js" defer></script>
+  <script src="modal.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav aria-label="Assignment tasks">
+      <a href="modal.html" aria-current="page">Modals</a>
+      <a href="form.html">Form validation</a>
+      <a href="drag.html">Priority list</a>
+    </nav>
+
+    <button id="theme-toggle" type="button" aria-pressed="false">
+      Dark mode
+    </button>
+  </header>
+
+  <main>
+    <h1>Task 1: Modal System</h1>
+    <p>Select a topic to learn more.</p>
+
+    <!-- One parent listener handles all three buttons. -->
+    <section id="topic-cards" class="cards">
+      <article class="card">
+        <h2>Event handling</h2>
+        <p>Respond to clicks, typing, and keyboard actions.</p>
+
+        <!-- data-topic identifies which modal content to display. -->
+        <button type="button" data-topic="events" aria-haspopup="dialog">
+          Learn More
+        </button>
+      </article>
+
+      <article class="card">
+        <h2>Event delegation</h2>
+        <p>Handle events from several children using one parent.</p>
+
+        <button type="button" data-topic="delegation" aria-haspopup="dialog">
+          Learn More
+        </button>
+      </article>
+
+      <article class="card">
+        <h2>localStorage</h2>
+        <p>Remember information between browser visits.</p>
+
+        <button type="button" data-topic="storage" aria-haspopup="dialog">
+          Learn More
+        </button>
+      </article>
+    </section>
+  </main>
+
+  <!-- Reuse this modal container for the three different topics. -->
+  <div id="overlay" class="overlay" aria-hidden="true">
+    <section
+      id="modal"
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+      aria-describedby="modal-description"
+    >
+      <div class="modal-header">
+        <h2 id="modal-title"></h2>
+
+        <button type="button" data-close aria-label="Close modal">
+          ×
+        </button>
+      </div>
+
+      <p id="modal-description"></p>
+      <button type="button" data-close>Close</button>
+    </section>
+  </div>
+</body>
+</html>
