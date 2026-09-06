@@ -215,3 +215,11 @@ If localStorage is unavailable, the controls still work during the current visit
 - Native Drag and Drop API
 - localStorage
 
+## Screenshots
+
+![form-validation](screenshots/form.png)
+
+![drag](screenshots/drag.ssh.png)
+
+![modal](screenshots/modal.png)
+
