@@ -22,6 +22,9 @@ week-2-day-4-assignment/
 └── README.md
 ```
 
+## Live Pages
+https://dominic-kores.github.io/week-3-day-4-assessment/
+
 ## Getting Started
 
 1. Save all files in the same folder.
@@ -211,4 +214,4 @@ If localStorage is unavailable, the controls still work during the current visit
 - Vanilla JavaScript
 - Native Drag and Drop API
 - localStorage
-# week-2-day-4-assignment
+
